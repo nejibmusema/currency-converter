@@ -1,0 +1,21 @@
+.header {
+  color: var(--inverse);
+
+  img {
+    padding-left: 1rem;
+    height: 4rem;
+  }
+
+  &_spacer {
+    flex: 1 1 auto;
+  }
+
+  &_menu {
+    display: flex;
+    gap: 15px;
+    button {
+      color: white;
+      border-color: white;
+    }
+  }
+}
