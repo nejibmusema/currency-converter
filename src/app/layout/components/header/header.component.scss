@@ -11,11 +11,25 @@
   }
 
   &_menu {
-    display: flex;
-    gap: 15px;
-    button {
-      color: white;
-      border-color: white;
+    display: none;
+  }
+  &_button {
+    display: block;
+  }
+}
+
+@media (min-width: 800px) {
+  .header {
+    &_button {
+      display: none;
+    }
+    &_menu {
+      display: flex;
+      gap: 15px;
+      button {
+        color: white;
+        border-color: white;
+      }
     }
   }
 }

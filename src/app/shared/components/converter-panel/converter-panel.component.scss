@@ -1,0 +1,65 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  &_value {
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    flex: 2;
+    flex-direction: column;
+  }
+  &_converter {
+    padding: 2em;
+    gap: 2em;
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    mat-form-field {
+      flex: auto;
+    }
+    &_type {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    &_submit {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+    }
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+
+  &-large {
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  &:hover {
+    border: 2px solid;
+    border-color: yellow;
+  }
+}
+
+@media (min-width: 854px) {
+  .panel {
+    flex-direction: row;
+    gap: 2em;
+    &_converter {
+      padding: 20px;
+      &_type {
+        gap: 20px;
+      }
+    }
+  }
+}

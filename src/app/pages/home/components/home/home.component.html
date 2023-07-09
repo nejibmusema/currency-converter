@@ -1,1 +1,14 @@
-<p>home works!</p>
+<h2>Currency Exchanger</h2>
+<app-converter-panel
+  [currencySymbol]="currencySymbol"
+  [conversionPanelData]="conversionPanelData"
+  (onCurrencyRequest)="currencyRequestHandler($event)"
+></app-converter-panel>
+<div class="currency">
+  <app-currency-box class="currency_item"></app-currency-box>
+  <app-currency-box class="currency_item"></app-currency-box>
+  <app-currency-box class="currency_item"></app-currency-box>
+  <app-currency-box class="currency_item"></app-currency-box>
+  <app-currency-box class="currency_item"></app-currency-box>
+  <app-currency-box class="currency_item"></app-currency-box>
+</div>

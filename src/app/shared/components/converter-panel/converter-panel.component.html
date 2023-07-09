@@ -1,0 +1,73 @@
+<form [formGroup]="exchangeForm">
+  <div class="panel mat-elevation-z2">
+    <div class="panel_value">
+      <mat-form-field appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input
+          type="number"
+          min="0.01"
+          step="0.5"
+          matInput
+          formControlName="amount"
+          placeholder="Placeholder"
+        />
+      </mat-form-field>
+      <div class="box">
+        <span
+          >1.00 {{ conversionPanelData.from }} =
+          {{ conversionPanelData.result }} {{ conversionPanelData.to }}</span
+        >
+      </div>
+    </div>
+    <div class="panel_converter">
+      <div class="panel_converter_type">
+        <mat-form-field appearance="outline">
+          <mat-label>From</mat-label>
+          <mat-select formControlName="from">
+            <mat-option
+              *ngFor="let symbol of currencySymbol"
+              [value]="symbol.symbol"
+              >{{ symbol.country }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="onSwap()"
+          aria-label="switch button"
+        >
+          <mat-icon
+            aria-hidden="false"
+            aria-label="switch"
+            fontIcon="sync_alt"
+          ></mat-icon>
+        </button>
+
+        <mat-form-field appearance="outline">
+          <mat-label>To</mat-label>
+          <mat-select formControlName="to">
+            <mat-option
+              *ngFor="let symbol of currencySymbol"
+              [value]="symbol.symbol"
+              >{{ symbol.country }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <button
+        mat-raised-button
+        extended
+        color="primary"
+        (click)="onSubmit()"
+        [disabled]="!exchangeForm.valid"
+      >
+        Convert
+      </button>
+      <div class="panel_submit">
+        <div class="box box-large">{{ conversionPanelData.result ?? 0 }}</div>
+      </div>
+    </div>
+  </div>
+</form>

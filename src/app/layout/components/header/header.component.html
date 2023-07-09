@@ -5,4 +5,11 @@
     <button mat-stroked-button>EUR-USD Details</button>
     <button mat-stroked-button>EUR-GBP Details</button>
   </div>
+  <button
+    class="header_button"
+    mat-icon-button
+    (click)="layoutService.sideBarOpened = !layoutService.sideBarOpened"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
 </mat-toolbar>

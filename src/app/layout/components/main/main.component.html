@@ -1,4 +1,17 @@
-<div class="container">
-  <app-header></app-header>
-  <router-outlet></router-outlet>
-</div>
+<app-header></app-header>
+<mat-drawer-container autosize>
+  <mat-drawer
+    [(opened)]="layoutService.sideBarOpened"
+    [mode]="layoutService.isSideBar ? 'side' : 'over'"
+  >
+    <app-side-bar></app-side-bar>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <div class="container">
+      <div class="container_page">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</mat-drawer-container>
